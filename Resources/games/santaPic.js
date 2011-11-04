@@ -16,46 +16,26 @@ var box = Ti.UI.createView({
 
 
 var button = Titanium.UI.createButton({
-	bottom:10,
-	width:200,
+	bottom:5,
+	right:10,
 	height:40,
 	left:10,
 	font:{fontSize:20,fontWeight:'bold',fontFamily:'Helvetica Neue'},
 	title:'Take Picture'
 });
 
-var button2 = Titanium.UI.createButton({
-	bottom:10,
-	width:90,
-	height:40,
-	right:10,
-	font:{fontSize:20,fontWeight:'bold',fontFamily:'Helvetica Neue'},
-	title:'Flip'
-});
-
 
 var overlay = Titanium.UI.createView();
 overlay.add(box);
 overlay.add(button);
-overlay.add(button2);
+
 
 button.addEventListener('click',function()
 {
 	//scanner.borderColor = 'blue';
+	Ti.Media.vibrate();
 	Ti.Media.takePicture();
 	
-});
-var front=true;
-button2.addEventListener('click',function()
-{
-if(front){
-	Ti.Media.switchCamera(Ti.Media.CAMERA_REAR);
-	front = false;
-} else{
-	Ti.Media.switchCamera(Ti.Media.CAMERA_FRONT);
-	front = true;
-}
-
 });
 
 santa.addEventListener('touchmove', function(e){
@@ -69,8 +49,8 @@ Titanium.Media.showCamera({
 	success:function(event)
 	{
 		alert('Great Picture, now just move the santa hat in place and save the photo.');
-		Ti.API.debug("picture was taken");
-		var view = Ti.UI.createView();
+
+		var view = Ti.UI.createView({top:0, left:0, right:0, bottom:0});
 		// place our picture into our window
 		var imageView = Ti.UI.createImageView({
 			image:event.media,
@@ -96,7 +76,7 @@ Titanium.Media.showCamera({
 			Titanium.Media.saveToPhotoGallery(view.toImage());
 			alert('Image saved to Gallery');
 			win.close();
-		})
+		});
 	},
 	cancel:function()
 	{
@@ -118,4 +98,6 @@ Titanium.Media.showCamera({
 	showControls:false,	// don't show system controls
 	mediaTypes:Ti.Media.MEDIA_TYPE_PHOTO
 	//autohide:true // tell the system not to auto-hide and we'll do it ourself
-});
+	});
+
+Ti.Media.switchCamera(Ti.Media.CAMERA_REAR);

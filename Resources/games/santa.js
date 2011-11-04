@@ -1,7 +1,6 @@
 var win = Ti.UI.currentWindow;
 win.orientationModes = [
 	Titanium.UI.LANDSCAPE_RIGHT
-
 ]; 
 
 win.addEventListener('focus', function(){
@@ -17,24 +16,10 @@ var background = Ti.UI.createImageView({
 
 win.add(background);
 
-
-
-var done = Ti.UI.createButton({
-	title:'Done',
-	width:'40',
-	height:'20',
-	top:2,
-	left:2
-});
-win.add(done);
 var next = Ti.UI.createButton({
 	title:'Next',
-	width:'40',
-	height:'20',
-	top:2,
-	right:2
 });
-win.add(next);
+win.setRightNavButton(next);
 
 var santa = Ti.UI.createImageView({
 	image:'../images/santa.png',
@@ -58,7 +43,8 @@ var timer = setInterval(function(){time+=1;}, 1000);
 santa.center=center
 santa2.center = center;
 santa.addEventListener('click', function(){
-		clearInterval(timer);
+	Ti.Media.vibrate();
+	clearInterval(timer);
 	santa2.show();
 	//santa.animate({height:80, width:80, duration:200});
 	setTimeout(function(){santa2.hide();
