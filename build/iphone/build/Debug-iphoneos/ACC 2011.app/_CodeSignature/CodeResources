@@ -34,15 +34,15 @@
 		</data>
 		<key>appicon-ipad.png</key>
 		<data>
-		FSOZC7XH3svFSDugXkGHwdxOeAo=
+		q6xK7IuHoVpDhPmUi84NChe8bLA=
 		</data>
 		<key>appicon.png</key>
 		<data>
-		tANSp39jwtb0fIa9vfcq5vJ5/h8=
+		hpVDHgK/dW1eCfTJbzY1Mxm9gpw=
 		</data>
 		<key>appicon@2x.png</key>
 		<data>
-		PJ2DiDQHKJxApTRYPbNnNMVIDhE=
+		i6voqiwPqFN5RBQSsQz6xgZwHY0=
 		</data>
 		<key>debugger.plist</key>
 		<data>
@@ -55,6 +55,10 @@
 		<key>iTunesArtwork</key>
 		<data>
 		fIk82XvDVeHITu/ElCfkD/Zskdw=
+		</data>
+		<key>iTunesArtwork.png</key>
+		<data>
+		aM3/rYS4zKwwAO+hRFC4EXeLNhA=
 		</data>
 		<key>images/christmas.jpg</key>
 		<data>
@@ -388,6 +392,18 @@
 		<data>
 		HEgf1oU+ymFhD0X9dXmfkshtWnU=
 		</data>
+		<key>images/santabeard@2x.png</key>
+		<data>
+		wUEQL7aYP4I/YyjyohCyJHLWI/o=
+		</data>
+		<key>images/santahat.png</key>
+		<data>
+		mM6uY7WzEmWF/geiHMeReFWQo9I=
+		</data>
+		<key>images/santahat@2x.png</key>
+		<data>
+		eXsjRRPMNSmZlr0taLXhQD8MY9A=
+		</data>
 		<key>images/sign.png</key>
 		<data>
 		fRkvVyOlYlGU0EBlklX92faArks=
@@ -407,10 +423,6 @@
 		<key>images/snowflake_lg.png</key>
 		<data>
 		G+wWMYuEqay6He7NnfgZjENwE2w=
-		</data>
-		<key>module.xcconfig</key>
-		<data>
-		I2liznrL3hHE6th2gVIZB8A+eiE=
 		</data>
 		<key>modules/facebook/images/LoginNormal.png</key>
 		<data>

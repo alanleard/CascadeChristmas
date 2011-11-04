@@ -19,7 +19,7 @@
     <prerendered-icon>true</prerendered-icon>
     <statusbar-style>opaque</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
-    <fullscreen>false</fullscreen>
+    <fullscreen>true</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
     <guid>d4f87f22-b226-4167-a148-d47117151656</guid>
@@ -38,6 +38,6 @@
     <modules>
     	 <module platform='iphone' version="1.0">ti.paint</module>
     	 <module platform='android' version="1.0">ti.paint</module>
-    	 <!--<module platform="iphone" version="0.1">ti.box2d</module>-->
+    	 <module platform="iphone" version="0.1">ti.box2d</module>
     </modules>
 </ti:app>

@@ -1,5 +1,5 @@
 var win = Ti.UI.currentWindow;
-  /*  
+  
   	snow = function( options )
 	{
 		var topView = Ti.UI.createView({ backgroundColor:'#043A46', top:0, bottom:0 });
@@ -76,4 +76,4 @@ var win = Ti.UI.currentWindow;
 win.addEventListener('open', function(){
 	win.add(snow());
 });
-*/
+

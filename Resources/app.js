@@ -11,7 +11,8 @@ Ti.include('utils.js');
 var win1 = Titanium.UI.createWindow({  
     backgroundColor:'#000',
     navBarHidden:true,
-    url:'win1.js'
+    url:'win1.js', 
+    fullscreen:true
 });
 var tab1 = Titanium.UI.createTab({  
     icon:'KS_nav_views.png',

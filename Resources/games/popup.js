@@ -1,6 +1,6 @@
 
 var win = Ti.UI.currentWindow;
-win.setNavBarHidden=true;
+win.navBarHidden=true;
 
 var game = function(){
 var score = 0;
@@ -127,6 +127,7 @@ var pop = setInterval(function(){
 }, time);
 
 gMan.addEventListener('touchstart', function(e){
+	
 	src.text = addCommas(gMan.point* multiplier);
 	src.center = gMan.center;
 	src.show();
