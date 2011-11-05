@@ -748,7 +748,7 @@ static TiValueRef StringFormatDecimalCallback (TiContextRef jsContext, TiObjectR
 {
 	if (stopped!=YES)
 	{
-		@throw [NSException exceptionWithName:@"org.acc2011.kroll" 
+		@throw [NSException exceptionWithName:@"org.cascadechristmas.kroll" 
 									   reason:@"already started"
 									 userInfo:nil];
 	}

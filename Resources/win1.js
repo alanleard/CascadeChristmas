@@ -10,7 +10,7 @@ var curtainTop = Ti.UI.createView({
 var curtainMain = Ti.UI.createView({
 	backgroundImage:'images/curtain-main.png',
 	//backgroundColor:'red',
-	bottom:0,
+	bottom:-20,
 	height:Ti.Platform.displayCaps.platformHeight-70,
 	top:0,
 	left:0,
@@ -120,7 +120,7 @@ win.addEventListener('open', function(){
 win.add(curtainTop);
 
 win.addEventListener('touchend', function(){
-	if(curtainMain.bottom == 0){
+	if(curtainMain.bottom == -20){
 		
 		curtainMain.animate({ bottom:(Ti.Platform.displayCaps.platformHeight*2), duration:1500});
 		sign.animate(c);
@@ -132,11 +132,11 @@ win.addEventListener('touchend', function(){
 		var curtainAnimation = Titanium.UI.createAnimation();
 			curtainAnimation.duration = 1000;
 			curtainAnimation.curve = Ti.UI.ANIMATION_CURVE_EASE_OUT;
-			curtainAnimation.bottom = 0;
+			curtainAnimation.bottom = -20;
 			curtainAnimation.top = 0;
 		curtainMain.animate(curtainAnimation);
 		
-		setTimeout(function(){curtainMain.bottom = 0; curtainMain.top = 0;},1000);
+		setTimeout(function(){curtainMain.bottom = -20; curtainMain.top = 0;},1000);
 		
 		curtainAnimation.addEventListener('complete', function(){
 			sign.animate(d);

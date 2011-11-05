@@ -22,4 +22,5 @@ win.add(table);
 
 win.addEventListener('focus', function(){
 	win.navBarHidden=false;
+	Titanium.UI.orientation = Titanium.UI.PORTRAIT;
 })

@@ -1,7 +1,9 @@
 Titanium.Paint = Ti.Paint = require('ti.paint');
 var close = Ti.UI.createButton({title:'Done', width:50, height:30, top:2,left:2});
 var win = Ti.UI.currentWindow;
-win.navBarHidden=true;
+win.addEventListener('focus', function(){
+	win.navBarHidden=true;
+});
 var imageView = Ti.UI.createImageView({backgroundColor:'#fff'});
 var gManLrg = Ti.UI.createImageView({
     image: '../images/gManBlk.png',

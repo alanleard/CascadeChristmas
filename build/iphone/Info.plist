@@ -22,7 +22,7 @@
 			<string>com.cascadechristmas.app</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>acc2011</string>
+				<string>cascadechristmas</string>
 				
 			</array>
 		</dict>
@@ -38,7 +38,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1320400894</string>
+	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
         <key>UIPrerenderedIcon</key>

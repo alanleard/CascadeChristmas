@@ -3,7 +3,7 @@
 // Free for personal or commercial use, with or without modification.
 // No warranty is expressed or implied.
 
-// NOTE: ACC2011 modified to convert from Category to 
+// NOTE: CascadeChristmas modified to convert from Category to 
 // new Class name since iPhone seems to have some issues with Categories
 // of built in Classes
 

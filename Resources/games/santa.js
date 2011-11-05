@@ -1,9 +1,9 @@
 var win = Ti.UI.currentWindow;
-win.orientationModes = [
-	Titanium.UI.LANDSCAPE_RIGHT
-]; 
+
+
 
 win.addEventListener('focus', function(){
+Titanium.UI.orientation = Titanium.UI.LANDSCAPE_RIGHT;
 var background = Ti.UI.createImageView({
 	image:'../images/christmas1.jpg',
 	//height:Ti.Platform.displayCaps.platformHeight,
@@ -53,9 +53,6 @@ santa.addEventListener('click', function(){
 
 })
 
-done.addEventListener('click', function(){
-	win.close();
-});
 var num = 1;
 next.addEventListener('click', function(){
 	if(num<3){

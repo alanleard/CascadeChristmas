@@ -9,9 +9,9 @@
 
 
 // A good bit of this code was derived from the Three20 project
-// and was customized to work inside ACC2011
+// and was customized to work inside CascadeChristmas
 //
-// All modifications by ACC2011 are licensed under 
+// All modifications by CascadeChristmas are licensed under 
 // the Apache License, Version 2.0
 //
 //
