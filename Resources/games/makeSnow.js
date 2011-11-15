@@ -144,12 +144,15 @@ button.addEventListener('click', function(){
 
 win.addEventListener('open', function(){
 	var alert1 = Ti.UI.createAlertDialog({
-		title:'Make it Snow!', message:'Pick a picture, then make it snow by tapping the screen!'
+		title:'Make it Snow!', message:'Pick a picture, then make it snow by tapping the screen!', buttonNames:['Start', 'Cancel']
 	});
 	alert1.show();
-	
-
-  Titanium.Media.openPhotoGallery(
+	alert1.addEventListener('click', function(e){
+		if(e.index === 1){
+			win.close();
+		} else {
+			
+			Titanium.Media.openPhotoGallery(
   { 
     success:function(event)
     {hideView.show();
@@ -182,6 +185,10 @@ win.addEventListener('open', function(){
   });
 	win.add(snow());
 
+		}
+	});
+
+  
 
 });
 

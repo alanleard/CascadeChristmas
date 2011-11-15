@@ -10,8 +10,8 @@
 NSString * const TI_APPLICATION_DEPLOYTYPE = @"development";
 NSString * const TI_APPLICATION_ID = @"com.cascadechristmas.app";
 NSString * const TI_APPLICATION_PUBLISHER = @"alanleard";
-NSString * const TI_APPLICATION_URL = @"http://cascadetheatre.com";
-NSString * const TI_APPLICATION_NAME = @"ACC 2011";
+NSString * const TI_APPLICATION_URL = @"http://www.cascadetheatre.org";
+NSString * const TI_APPLICATION_NAME = @"Cascade Xmas";
 NSString * const TI_APPLICATION_VERSION = @"1.0";
 NSString * const TI_APPLICATION_DESCRIPTION = @"not specified";
 NSString * const TI_APPLICATION_COPYRIGHT = @"2011 by alanleard";

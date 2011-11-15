@@ -248,7 +248,7 @@ pop3 = gManFactory(2500, 1500, 50, 10);
 */
 }
 win.addEventListener('focus', function(){	
-var start = Ti.UI.createAlertDialog({title:'Baking Gingerbread Men', message:'Tap the Gingerbread Men as fast as you can for the highest score.', buttonNames:['Start', 'Cancel']})
+var start = Ti.UI.createAlertDialog({title:'Gingerbread Party', message:'Tap the Gingerbread Men as fast as you can for the highest score.', buttonNames:['Start', 'Cancel']})
 	start.show();
 	start.addEventListener('click', function(e){
 		if(e.index == 0){

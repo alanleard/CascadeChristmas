@@ -84,7 +84,7 @@ if(Ti.Platform.osname == 'android'){
 
 var length = castInfo.length;
 for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:105, left:10, top:5, bottom:5, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -205,7 +205,7 @@ if(Ti.Platform.osname == 'android'){
 
 var length = students.length;
 for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:105, left:10, top:5, bottom:5, headshot:students[i].image, name:students[i].name, role:students[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:students[i].image, name:students[i].name, role:students[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -323,7 +323,7 @@ if(Ti.Platform.osname == 'android'){
 
 var length = youth.length;
 for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:105, left:10, top:5, bottom:5, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -411,3 +411,30 @@ scrollView3.add(view3);
 	});
 scrollable.views = [scrollView1, scrollView2, scrollView3];
 win.add(scrollable);
+
+var hideView = Ti.UI.createView({
+	top:0,
+	bottom:0,
+	lefT:0,
+	right:0,
+	backgroundColor:'#000',
+	opacity:0.8,
+	visible:false
+});
+
+var actInd = Ti.UI.createActivityIndicator({
+	color:'#fff',
+	message:'Grabbing the Cast...',
+	height:'auto'
+});
+
+hideView.add(actInd);
+actInd.show();
+win.add(hideView);
+
+win.addEventListener('open', function(){
+	hideView.show()
+	setTimeout(function(){
+		hideView.hide();
+	}, 1000);
+})

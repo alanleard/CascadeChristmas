@@ -17,7 +17,7 @@ imageView.add(gManLrg);
 var painter = Ti.Paint.createPaintView({
     top:2, right:2, bottom:2, left:2,
     // strokeWidth (float), strokeColor (string), strokeAlpha (int, 0-255)
-    strokeColor:'#0f0', strokeAlpha:255, strokeWidth:10,
+    strokeColor:'#FF00CC', strokeAlpha:255, strokeWidth:10,
     eraseMode:false
 });
 imageView.add(painter);
@@ -88,7 +88,7 @@ var whiteView = Ti.UI.createView({
 	height:35,
 	borderRadius:10,
   borderWidth:1,
-	backgroundColor:'#ffffff'
+	backgroundColor:'#FFFFCC'
 });
 
 colorScroll.add(whiteView);
@@ -100,7 +100,7 @@ var blueView = Ti.UI.createView({
 	left:45,
 	borderRadius:10,
 	borderWidth:1,
-	backgroundColor:'#000099'
+	backgroundColor:'#3300CC'
 });
 
 colorScroll.add(blueView);
@@ -150,7 +150,7 @@ var yellowView = Ti.UI.createView({
   borderRadius:10,
   borderWidth:1,
   borderwidth:1,
-  backgroundColor:'#ffff00'
+  backgroundColor:'#FF00CC'
 });
 
 colorScroll.add(yellowView);
@@ -264,7 +264,7 @@ var strokeSize = Ti.UI.createTextField({
   left:0,
   keyboardType:Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
   paddingLeft:3,
-  backgroundColor:'#fff'
+  backgroundColor:'#ff00cc'
 });
 
 win.rightNavButton = strokeSize;
@@ -296,7 +296,7 @@ colorScroll.addEventListener('click', function(e){
   background = e.source.backgroundColor;
   strokeSize.backgroundColor = background;
   //Add if statement to make sure strokeSize Text is visible
-  if (background != '#ffffff' && background != '#ffff00' && background != '#ffcc66' && background != '#66ffff')
+  if (background != '#FFFFCC' && background != '#ffff00' && background != '#ffcc66' && background != '#66ffff')
   {
     strokeSize.color='#ffffff';
     }
@@ -492,7 +492,7 @@ actInd.show();
   //close.show();
   
 //});
-
+/*
 //Provide a Help Pop-up with some instructions
 help.addEventListener('click', function(){
 Titanium.UI.createAlertDialog({
@@ -511,7 +511,8 @@ var instView = Ti.UI.createView({
 	bottom:0,
 	backgroundColor:'#000'
 });
-
+*/
+/*
 var instructions = Ti.UI.createLabel({
 	text:"Decorating Cookies\n\nTo decorate your gingerbread cookie, select a color by scrolling left and right in the color palate.  \nDraw on the cookie and the surrounding space.  \nPress 'Erase' to erase some of your drawing.  \nPress 'Clear' to start over.  \nYou can also select a color, and then press clear to start with a new background color.  \nPressing 'Save' will save your cookie to your photo gallery. \nChange the brush size in the upper right hand corner by type in a size number. \nThe 'Hide' button will hide the controls so you will have the full screen to draw.  \n\n Click anywhere on this screen to get started!",
 	color:'#fff',
@@ -520,15 +521,25 @@ var instructions = Ti.UI.createLabel({
 instView.add(instructions);
 instView.addEventListener('click', function(){
 	win.remove(instView);
-	setTimeout(function(){
+	
+
+})
+win.add(instView);
+*/
+win.addEventListener('focus', function(){	
+var start = Ti.UI.createAlertDialog({title:'Decorating Cookies', message:'Draw with your finger to decorate your gingerbread man.', buttonNames:['Start', 'Cancel']})
+	start.show();
+	start.addEventListener('click', function(e){
+		if(e.index == 0){
+			setTimeout(function(){
 		colorScroll.scrollTo(250,0);
 	}, 200);
 	
 	setTimeout(function(){
 		colorScroll.scrollTo(100,0);
 	}, 500);
-
-})
-win.add(instView);
-
-win.open();
+		} else{
+			win.close();
+		}
+});
+});

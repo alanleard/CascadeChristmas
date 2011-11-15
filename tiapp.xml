@@ -8,10 +8,10 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <id>com.cascadechristmas.app</id>
-    <name>ACC 2011</name>
+    <name>CascadeXmas</name>
     <version>1.0</version>
     <publisher>alanleard</publisher>
-    <url>http://cascadetheatre.com</url>
+    <url>http://www.cascadetheatre.org</url>
     <description>not specified</description>
     <copyright>2011 by alanleard</copyright>
     <icon>appicon.png</icon>
