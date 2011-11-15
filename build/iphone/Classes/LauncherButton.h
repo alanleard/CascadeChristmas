@@ -9,9 +9,9 @@
 
 
 // A good bit of this code was derived from the Three20 project
-// and was customized to work inside CascadeChristmas
+// and was customized to work inside CascadeXmas
 //
-// All modifications by CascadeChristmas are licensed under 
+// All modifications by CascadeXmas are licensed under 
 // the Apache License, Version 2.0
 //
 //

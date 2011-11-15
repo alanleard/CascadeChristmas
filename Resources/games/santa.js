@@ -50,7 +50,7 @@ win.addEventListener('focus', function(){
 	touchView.center=center
 	
 	function nextSanta(){
-		if(num<3){
+		if(num<4){
 			center = {x:(Math.floor(Math.random()*(Ti.Platform.displayCaps.platformWidth-100))+40),y:(Math.floor(Math.random()*(Ti.Platform.displayCaps.platformHeight-100))+50)};
 			num++;
 			background.backgroundImage = '../images/christmas'+num+'.jpg'
@@ -76,12 +76,19 @@ win.addEventListener('focus', function(){
 	
 	touchView.addEventListener('touchstart', function(){
 		santa2.show();
-		Ti.Media.vibrate();
+		//Ti.Media.vibrate();
 		clearInterval(timer);
 		//santa.animate({height:80, width:80, duration:200});
 		setTimeout(function(){
 			santa2.visible = false;
 			var alertD = Ti.UI.createAlertDialog({title:'You Found Him!', message:'You found Santa in '+time+' seconds!', buttonNames:['Done', 'Next']});
+			if(time<2){
+				if(time<1){
+					alertD.message='You found Santa right away!'
+				} else {
+					alertD.message='You found Santa in 1 second!'
+				}
+			}
 			alertD.show();
 			alertD.addEventListener('click', function(e){
 				if(e.index ===0){

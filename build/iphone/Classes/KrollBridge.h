@@ -16,7 +16,7 @@
 #import "KrollObject.h"
 #import "TiModule.h"
 
-@interface CascadeChristmasObject : KrollObject {
+@interface CascadeXmasObject : KrollObject {
 @private
 	NSMutableDictionary *modules;
 	TiHost *host;
@@ -37,7 +37,7 @@
 	KrollContext *context;
 	NSDictionary *preload;
 	NSMutableDictionary *modules;
-	CascadeChristmasObject *_cascadechristmas;
+	CascadeXmasObject *_cascadexmas;
 	BOOL shutdown;
     BOOL evaluationError;
 	NSMutableArray *proxies;

@@ -62,7 +62,7 @@ var cascadeData = {
 		    //description: "Be sure to get your tickets for this locally produced show!"
 		}
 var cascadeShare = Ti.UI.createButton({
-		title:'Post your thoughts on the Cascade wall',
+		title:'Post on the Cascade Theatre wall',
 		feed:'194564246214/feed',
 		height:40,
 		width:300,
@@ -133,7 +133,7 @@ win.add(postView);
 meShare.addEventListener('click', function(e){
 	postView.show();
 	if(message.value.length<1){
-		var alertD = Ti.UI.createAlertDialog({title:'Add a message?', message:'Do you want to add a message to your post?', buttonNames:['Yes', 'No Thanks']});
+		var alertD = Ti.UI.createAlertDialog({title:'Blank Post?', message:'Do you want to add a message to your post?', buttonNames:['Add', 'Post']});
 		alertD.show();
 		alertD.addEventListener('click', function(e){
 			if(e.index === 1){
@@ -156,7 +156,7 @@ meShare.addEventListener('click', function(e){
 cascadeShare.addEventListener('click', function(e){
 	postView.show();
 	if(message.value.length<1){
-		var alertD = Ti.UI.createAlertDialog({title:'Add a message?', message:'Do you want to add a personal message to your wall post?', buttonNames:['Yes', 'No Thanks']});
+		var alertD = Ti.UI.createAlertDialog({title:'Blank Post?', message:'Do you want to add a personal message to your wall post?', buttonNames:['Add', 'Post']});
 		alertD.show();
 		alertD.addEventListener('click', function(e){
 			if(e.index === 1){
@@ -178,7 +178,7 @@ cascadeShare.addEventListener('click', function(e){
 cascadeCheckin.addEventListener('click', function(e){
 	postView.show();
 	if(message.value.length<1){
-		var alertD = Ti.UI.createAlertDialog({title:'Add a message?', message:'Do you want to add a message to your checkin?', buttonNames:['Yes', 'No Thanks']});
+		var alertD = Ti.UI.createAlertDialog({title:'Add a Message!', message:'Do you want to add a message to your checkin?', buttonNames:['Add', 'Check-in']});
 		alertD.show();
 		alertD.addEventListener('click', function(e){
 			if(e.index === 1){
@@ -197,8 +197,97 @@ cascadeCheckin.addEventListener('click', function(e){
 	}	
 	
 });
-win.addEventListener('focus', function(){
+win.addEventListener('open', function(){
 	if(!Titanium.Facebook.loggedIn){
 		win2.open();
 	}
+});
+
+var cascadeLabel = Ti.UI.createLabel({text:'Cascade Theatre Resources', height:'auto',color:'#fff', left:10, right:10, textAlign:'center', bottom:70});
+
+
+
+var line = Ti.UI.createView({borderWidth:2, borderColor:'#fff', height:1, bottom:60, left:10, right:10});
+
+win.add(line);
+win.add(cascadeLabel);
+var buttonView = Ti.UI.createView({
+	bottom:0,
+	left:0,
+	right:0,
+	height:50,
+	layout:'horizontal'
+});
+win.add(buttonView);
+
+var space = (Ti.Platform.displayCaps.platformWidth-200)/6
+var facebook = Ti.UI.createImageView({
+	image:'images/fb.png',
+	height:40,
+	width:40,
+	left:space,
+	bottom:10
+});
+
+buttonView.add(facebook);
+
+facebook.addEventListener('click', function(){
+	if(Ti.Platform.osname !='android'){if(Ti.Platform.canOpenURL('fb://profile/194564246214/wall')){
+		Ti.Platform.openURL('fb://profile/194564246214/wall');
+	} else {
+		Ti.Platform.openURL('http://www.facebook.com/cascadetheatre');
+	}
+	} else {
+		Ti.Platform.openURL('http://www.facebook.com/cascadetheatre');
+	}
+	
+});
+
+var app = Ti.UI.createButton({
+	image:'images/appstore.png',
+	height:40,
+	left:space,
+	width:40,
+	bottom:10
 })
+
+app.addEventListener('click', function(){
+	Ti.Platform.openURL('http://itunes.apple.com/us/app/cascade-theatre-redding-ca/id388337024?mt=8');
+});
+buttonView.add(app);
+var call = Ti.UI.createButton({
+	image:'images/call.png',
+	height:40,
+	left:space,
+	width:40,
+	bottom:10
+});
+buttonView.add(call);
+call.addEventListener('click', function(){
+	Ti.Platform.openURL('tel:5302438877');
+});
+
+var map = Ti.UI.createButton({
+	image:'images/map.png',
+	height:40,
+	left:space,
+	width:40,
+	bottom:10
+});
+buttonView.add(map);
+map.addEventListener('click', function(){
+	Ti.Platform.openURL('http://maps.google.com/maps?q=cascade+theatre,+redding,+ca&hl=en&sll=37.0625,-95.677068&sspn=48.77566,113.291016&vpsrc=6&hq=cascade+theatre,&hnear=Redding,+Shasta,+California&t=m&z=16');
+});
+
+var web = Ti.UI.createImageView({
+	image:'images/safari.png',
+	height:40,
+	width:40,
+	bottom:10,
+	left:space
+});
+buttonView.add(web);
+
+web.addEventListener('click', function(){
+	Ti.Platform.openURL('http://www.cascadetheatre.org');
+});

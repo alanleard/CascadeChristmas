@@ -1,6 +1,10 @@
-#Thu Oct 20 16:29:33 PDT 2011
+#Tue Nov 15 03:14:59 PST 2011
 eclipse.preferences.version=1
 provisioning_profiles/development/B65EA545-FF50-4E16-A922-6C98CD3C934E/appid=com.cascadechristmas.app
 provisioning_profiles/development/B65EA545-FF50-4E16-A922-6C98CD3C934E/filepath=/Users/alanleard/TiApps/ProvisioningFiles/Cascade_Christmas.mobileprovision
 provisioning_profiles/development/B65EA545-FF50-4E16-A922-6C98CD3C934E/name=Cascade Christmas
 provisioning_profiles/development/B65EA545-FF50-4E16-A922-6C98CD3C934E/uuid=B65EA545-FF50-4E16-A922-6C98CD3C934E
+provisioning_profiles/distribution/AF4075AD-8138-4543-BF37-96C7EECE7A7D/appid=com.cascadechristmas.app
+provisioning_profiles/distribution/AF4075AD-8138-4543-BF37-96C7EECE7A7D/filepath=/Users/alanleard/TiApps/ProvisioningFiles/CascadeChristmas (1).mobileprovision
+provisioning_profiles/distribution/AF4075AD-8138-4543-BF37-96C7EECE7A7D/name=CascadeChristmas
+provisioning_profiles/distribution/AF4075AD-8138-4543-BF37-96C7EECE7A7D/uuid=AF4075AD-8138-4543-BF37-96C7EECE7A7D

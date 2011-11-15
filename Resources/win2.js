@@ -9,7 +9,7 @@ var scrollable = Ti.UI.createScrollableView({
 	showPagingControl:true,
 	pagingControlHeight:10
 });
-
+win.add(scrollable);
 var castInfo = [
 	{name:'Kim Acuña',role:'',image:'KimAcuna'},
 	{name:'Mark Amacker', role:'', image:'MarkAmacker'},
@@ -126,7 +126,7 @@ for(var i=0; i<length; i++){
 }
 
 scrollView1.add(view1);
-
+scrollable.views = [scrollView1];
 	view1.addEventListener('touchend', function(e){
 		if(e.source.name){
 			e.source.opacity = 0.5;
@@ -247,7 +247,7 @@ for(var i=0; i<length; i++){
 }
 
 scrollView2.add(view2);
-
+scrollable.views = [scrollView1, scrollView2];
 	view2.addEventListener('touchend', function(e){
 		if(e.source.name){
 			e.source.opacity = 0.5;
@@ -365,7 +365,7 @@ for(var i=0; i<length; i++){
 }
 
 scrollView3.add(view3);
-
+scrollable.views = [scrollView1, scrollView2, scrollView3];
 	view3.addEventListener('touchend', function(e){
 		if(e.source.name){
 			e.source.opacity = 0.5;
@@ -409,32 +409,17 @@ scrollView3.add(view3);
 		Titanium.UI.currentTab.open(flipWin,{animated:true, transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
 		}
 	});
-scrollable.views = [scrollView1, scrollView2, scrollView3];
-win.add(scrollable);
-
-var hideView = Ti.UI.createView({
-	top:0,
-	bottom:0,
-	lefT:0,
-	right:0,
-	backgroundColor:'#000',
-	opacity:0.8,
-	visible:false
-});
-
+var hideView = Ti.UI.createView({top:0, left:0, right:0, bottom:0, opacity:0.8, zIndex:100, backgroundColor:'#000'});
 var actInd = Ti.UI.createActivityIndicator({
 	color:'#fff',
-	message:'Grabbing the Cast...',
-	height:'auto'
+	//message:'Grabbing the Cast...',
+	height:'auto',
+	style: Titanium.UI.iPhone.ActivityIndicatorStyle.BIG
 });
-
 hideView.add(actInd);
 actInd.show();
 win.add(hideView);
+setTimeout(function(){
+hideView.hide();
+},1000);
 
-win.addEventListener('open', function(){
-	hideView.show()
-	setTimeout(function(){
-		hideView.hide();
-	}, 1000);
-})

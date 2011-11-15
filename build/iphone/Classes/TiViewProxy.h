@@ -12,7 +12,7 @@
 
 @protocol TiKeyboardFocusableView
 
-#pragma mark Public CascadeChristmas APIs.
+#pragma mark Public CascadeXmas APIs.
 - (void)focus:(id)args;
 - (void)blur:(id)args;
 

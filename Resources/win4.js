@@ -1,5 +1,7 @@
 var win = Ti.UI.currentWindow;
 
+win.orientationModes = [Ti.UI.PORTRAIT, Ti.UI.LANDSCAPE_RIGHT];
+
 var scrollable = Ti.UI.createScrollableView({
 	top:0,
 	bottom:0,
@@ -25,7 +27,7 @@ var info = [{image:1, urlTop:'', urlBottom:''},
 var views =[];
 for(var i = 0; i<10; i++){
 	var view = Ti.UI.createImageView({
-		image:'images/sponsors/'+info[i].image+'.png',
+		image:'images/sponsors/'+info[i].image+'.jpg',
 		urlTop:info[i].urlTop,
 		urlBottom:info[i].urlBottom,
 		nameTop:info[i].nameTop,
@@ -51,7 +53,7 @@ scrollable.addEventListener('doubletap', function(e){
 		srcName = e.source.nameBottom;
 	}
 	
-	 var win2 = Ti.UI.createWindow({navBarHidden:false, barColor:'#000', title: srcName});
+	 var win2 = Ti.UI.createWindow({navBarHidden:false, barColor:'#000', title: srcName, backButtonTitle:'Back'});
 	 
 	 win2.orientationModes=[Titanium.UI.PORTRAIT,Titanium.UI.LANDSCAPE_RIGHT]; 
 

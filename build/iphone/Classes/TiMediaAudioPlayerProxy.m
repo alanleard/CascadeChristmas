@@ -267,13 +267,13 @@ MAKE_SYSTEM_PROP(STATE_PAUSED,AS_PAUSED);
         NSLog(@"[WARN] Invalid mode for audio player... setting to default.");
         newMode = kAudioSessionCategory_SoloAmbientSound;
     }
-	NSLog(@"[WARN] 'CascadeChristmas.Media.AudioPlayer.audioSessionMode' is deprecated; use 'CascadeChristmas.Media.audioSessionMode'");
+	NSLog(@"[WARN] 'CascadeXmas.Media.AudioPlayer.audioSessionMode' is deprecated; use 'CascadeXmas.Media.audioSessionMode'");
 	[[TiMediaAudioSession sharedSession] setSessionMode:newMode];
 }
 
 -(NSNumber*)audioSessionMode
 {
-	NSLog(@"[WARN] 'CascadeChristmas.Media.AudioPlayer.audioSessionMode' is deprecated; use 'CascadeChristmas.Media.audioSessionMode'");	
+	NSLog(@"[WARN] 'CascadeXmas.Media.AudioPlayer.audioSessionMode' is deprecated; use 'CascadeXmas.Media.audioSessionMode'");	
     return [NSNumber numberWithUnsignedInteger:[[TiMediaAudioSession sharedSession] sessionMode]];
 }
 

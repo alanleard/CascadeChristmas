@@ -540,10 +540,10 @@ bool KrollSetProperty(TiContextRef jsContext, TiObjectRef object, TiStringRef pr
 
 // forward declare these
 
-//@interface CascadeChristmasObject : NSObject
+//@interface CascadeXmasObject : NSObject
 //@end
 
-@interface CascadeChristmasObject (Private)
+@interface CascadeXmasObject (Private)
 -(NSDictionary*)modules;
 @end
 
@@ -561,9 +561,9 @@ void KrollPropertyNames(TiContextRef ctx, TiObjectRef object, TiPropertyNameAccu
 	{
 		id target = [o target];
 		
-		if ([o isKindOfClass:[CascadeChristmasObject class]])
+		if ([o isKindOfClass:[CascadeXmasObject class]])
 		{
-			for (NSString *key in [[(CascadeChristmasObject*)o modules] allKeys])
+			for (NSString *key in [[(CascadeXmasObject*)o modules] allKeys])
 			{
 				TiStringRef value = TiStringCreateWithUTF8CString([key UTF8String]);
 				TiPropertyNameAccumulatorAddName(propertyNames,value);

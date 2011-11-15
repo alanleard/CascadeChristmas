@@ -7,19 +7,19 @@
 #define _QUOTEME(x) #x
 #define STRING(x) _QUOTEME(x)
 
-NSString * const TI_APPLICATION_DEPLOYTYPE = @"development";
+NSString * const TI_APPLICATION_DEPLOYTYPE = @"test";
 NSString * const TI_APPLICATION_ID = @"com.cascadechristmas.app";
-NSString * const TI_APPLICATION_PUBLISHER = @"alanleard";
+NSString * const TI_APPLICATION_PUBLISHER = @"Alan Leard";
 NSString * const TI_APPLICATION_URL = @"http://www.cascadetheatre.org";
-NSString * const TI_APPLICATION_NAME = @"Cascade Xmas";
+NSString * const TI_APPLICATION_NAME = @"CascadeXmas";
 NSString * const TI_APPLICATION_VERSION = @"1.0";
-NSString * const TI_APPLICATION_DESCRIPTION = @"not specified";
+NSString * const TI_APPLICATION_DESCRIPTION = @"A mobile application to accompany the 2011 performance of A Cascade Christmas.";
 NSString * const TI_APPLICATION_COPYRIGHT = @"2011 by alanleard";
 NSString * const TI_APPLICATION_GUID = @"d4f87f22-b226-4167-a148-d47117151656";
 BOOL const TI_APPLICATION_ANALYTICS = true;
 
 #ifdef TARGET_IPHONE_SIMULATOR
-NSString * const TI_APPLICATION_RESOURCE_DIR = @"/Users/alanleard/TiApps/CascadeChristmas/Resources";
+NSString * const TI_APPLICATION_RESOURCE_DIR = @"";
 #endif
 
 int main(int argc, char *argv[]) {

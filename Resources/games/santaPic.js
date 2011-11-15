@@ -76,7 +76,7 @@ Titanium.Media.showCamera({
 			width:60,
 			height:40
 		});
-		win.add(save);
+		win.rightNavButton = save;
 		save.addEventListener('click', function(){
 			Titanium.Media.saveToPhotoGallery(view.toImage());
 			alert('Image saved to Gallery');

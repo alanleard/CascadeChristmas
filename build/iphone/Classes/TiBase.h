@@ -52,7 +52,7 @@ extern "C" {
 	#define KMETHOD_DEBUG MEMORY_DEBUG
 #endif
 
-// in simulator we redefine to format for CascadeChristmas Developer console
+// in simulator we redefine to format for CascadeXmas Developer console
 
 
 #define TI_INLINE static __inline__
@@ -286,7 +286,7 @@ if ((__x<__minX) || (__x>__maxX)) \
 #define DEFINE_EXCEPTIONS \
 - (void) throwException:(NSString *) reason subreason:(NSString*)subreason location:(NSString *)location\
 {\
-	NSString * exceptionName = [@"org.cascadechristmas." stringByAppendingString:NSStringFromClass([self class])];\
+	NSString * exceptionName = [@"org.cascadexmas." stringByAppendingString:NSStringFromClass([self class])];\
 	NSString * message = [NSString stringWithFormat:@"%@. %@ %@",reason,(subreason!=nil?subreason:@""),(location!=nil?location:@"")];\
 	NSLog(@"[ERROR] %@",message);\
 	if ([NSThread isMainThread]==NO) {\
@@ -296,7 +296,7 @@ if ((__x<__minX) || (__x>__maxX)) \
 \
 + (void) throwException:(NSString *) reason subreason:(NSString*)subreason location:(NSString *)location\
 {\
-	NSString * exceptionName = @"org.cascadechristmas";\
+	NSString * exceptionName = @"org.cascadexmas";\
 	NSString * message = [NSString stringWithFormat:@"%@. %@ %@",reason,(subreason!=nil?subreason:@""),(location!=nil?location:@"")];\
 	NSLog(@"[ERROR] %@",message);\
 	if ([NSThread isMainThread]==NO) {\
@@ -370,28 +370,28 @@ return map;\
 
  //MUST BE NEGATIVE, as it inhabits the same space as UIBarButtonSystemItem
 enum {
-	UICascadeChristmasNativeItemNone = -1, 
-	UICascadeChristmasNativeItemSpinner = -2,
-	UICascadeChristmasNativeItemProgressBar = -3,
+	UICascadeXmasNativeItemNone = -1, 
+	UICascadeXmasNativeItemSpinner = -2,
+	UICascadeXmasNativeItemProgressBar = -3,
 	
-	UICascadeChristmasNativeItemSlider = -4,
-	UICascadeChristmasNativeItemSwitch = -5,
-	UICascadeChristmasNativeItemMultiButton = -6,
-	UICascadeChristmasNativeItemSegmented = -7,
+	UICascadeXmasNativeItemSlider = -4,
+	UICascadeXmasNativeItemSwitch = -5,
+	UICascadeXmasNativeItemMultiButton = -6,
+	UICascadeXmasNativeItemSegmented = -7,
 	
-	UICascadeChristmasNativeItemTextView = -8,
-	UICascadeChristmasNativeItemTextField = -9,
-	UICascadeChristmasNativeItemSearchBar = -10,
+	UICascadeXmasNativeItemTextView = -8,
+	UICascadeXmasNativeItemTextField = -9,
+	UICascadeXmasNativeItemSearchBar = -10,
 	
-	UICascadeChristmasNativeItemPicker = -11,
-	UICascadeChristmasNativeItemDatePicker = -12,
+	UICascadeXmasNativeItemPicker = -11,
+	UICascadeXmasNativeItemDatePicker = -12,
 	
-	UICascadeChristmasNativeItemInfoLight = -13,
-	UICascadeChristmasNativeItemInfoDark = -14,
+	UICascadeXmasNativeItemInfoLight = -13,
+	UICascadeXmasNativeItemInfoDark = -14,
 	
-	UICascadeChristmasNativeItemDisclosure = -15,
+	UICascadeXmasNativeItemDisclosure = -15,
 	
-	UICascadeChristmasNativeItemContactAdd = -16
+	UICascadeXmasNativeItemContactAdd = -16
 };
 
 

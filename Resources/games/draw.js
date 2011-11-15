@@ -8,16 +8,18 @@ var gManLrg = Ti.UI.createImageView({
     top:0,
     //height:'auto',
     //width:'auto',
-    height:Ti.Platform.displayCaps.platformHeight-85,
+   // height:Ti.Platform.displayCaps.platformHeight-85,
     width:'auto',
-    hiRes:true
+    bottom:50
 });
 
 imageView.add(gManLrg);
 var painter = Ti.Paint.createPaintView({
     top:2, right:2, bottom:2, left:2,
     // strokeWidth (float), strokeColor (string), strokeAlpha (int, 0-255)
-    strokeColor:'#FF00CC', strokeAlpha:255, strokeWidth:10,
+    strokeColor:'#FF00CC',
+    // strokeAlpha:0, 
+    strokeWidth:10,
     eraseMode:false
 });
 imageView.add(painter);

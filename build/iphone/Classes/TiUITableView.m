@@ -932,7 +932,7 @@
 		}
 	}
 	
-    // Since the header proxy is not properly attached to a view proxy in the _cascadechristmas
+    // Since the header proxy is not properly attached to a view proxy in the _cascadexmas
     // system, we have to reposition it here.  Resetting the table header view
     // is because there's a charming bug in UITableView that doesn't respect redisplay
     // for headers/footers when the frame changes.

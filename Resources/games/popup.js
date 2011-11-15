@@ -4,14 +4,20 @@ var win = Ti.UI.currentWindow;
 
 var game = function(){
 var score = 0;
+
+var picnum = Math.floor(Math.random()*4)+1;
+//alert(picnum);
 var bgImage = Ti.UI.createView({
-	backgroundImage:'../images/christmas.jpg',
-	width:1024,
+	backgroundImage:'../images/christmas'+picnum+'.jpg',
+	width:500,
 	bottom:0,
 	left:0,
 	top:0
 });
-
+if(Ti.Platform.osname == 'ipad'){
+	bgImage.width = 1024;
+	bgImage.backgroundImage = '../images/christmas'+picnum+'@2x.jpg',
+}
 win.add(bgImage);
 function addCommas(nStr)
 {
@@ -83,8 +89,9 @@ gManLrg.addEventListener('click', function(){
 	
 	win.close();
 });
-
-bgImage.animate({left:-(1024-Ti.Platform.displayCaps.platformWidth), curve:Ti.UI.ANIMATION_CURVE_LINEAR, duration:62000});
+if(Ti.Platform.osname!='ipad'){
+	bgImage.animate({left:-(500-Ti.Platform.displayCaps.platformWidth), curve:Ti.UI.ANIMATION_CURVE_LINEAR, duration:62000});
+}
 var count = 60;
 setTimeout(function(){
 var time = setInterval(function(){
@@ -207,7 +214,7 @@ var pop = setInterval(function(){
 }, time);
 
 gMan.addEventListener('touchstart', function(e){
-	Ti.Media.vibrate();
+	//Ti.Media.vibrate();
 	src.text = addCommas(gMan.point* multiplier);
 	//src.center = gMan.center;
 	src.show();

@@ -34,12 +34,12 @@ MAKE_SYSTEM_PROP(DONE,UIBarButtonSystemItemDone);
 MAKE_SYSTEM_PROP(FLEXIBLE_SPACE,UIBarButtonSystemItemFlexibleSpace);
 MAKE_SYSTEM_PROP(FIXED_SPACE,UIBarButtonSystemItemFixedSpace);
 
-MAKE_SYSTEM_PROP(ACTIVITY,UICascadeChristmasNativeItemSpinner);
-MAKE_SYSTEM_PROP(SPINNER,UICascadeChristmasNativeItemSpinner);
-MAKE_SYSTEM_PROP(INFO_LIGHT,UICascadeChristmasNativeItemInfoLight);
-MAKE_SYSTEM_PROP(INFO_DARK,UICascadeChristmasNativeItemInfoDark);
-MAKE_SYSTEM_PROP(DISCLOSURE,UICascadeChristmasNativeItemDisclosure);
-MAKE_SYSTEM_PROP(CONTACT_ADD,UICascadeChristmasNativeItemContactAdd);
+MAKE_SYSTEM_PROP(ACTIVITY,UICascadeXmasNativeItemSpinner);
+MAKE_SYSTEM_PROP(SPINNER,UICascadeXmasNativeItemSpinner);
+MAKE_SYSTEM_PROP(INFO_LIGHT,UICascadeXmasNativeItemInfoLight);
+MAKE_SYSTEM_PROP(INFO_DARK,UICascadeXmasNativeItemInfoDark);
+MAKE_SYSTEM_PROP(DISCLOSURE,UICascadeXmasNativeItemDisclosure);
+MAKE_SYSTEM_PROP(CONTACT_ADD,UICascadeXmasNativeItemContactAdd);
 
 
 @end

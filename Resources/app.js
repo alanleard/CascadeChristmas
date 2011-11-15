@@ -65,14 +65,14 @@ var tab3 = Titanium.UI.createTab({
 // create controls tab and root window
 //
 var win4 = Titanium.UI.createWindow({  
-    title:'Cascade Christmas Sponsors',
+    title:'Cascade Christmas Supporters',
     backgroundColor:'#000',
     barColor:'#5d050d',
     url:'win4.js'
 });
 var tab4 = Titanium.UI.createTab({  
     icon:'sponsor.png',
-    title:'Sponsors',
+    title:'Support',
     window:win4
 });
 

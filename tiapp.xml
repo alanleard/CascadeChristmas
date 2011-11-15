@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
+    <sdk-version>1.7.3</sdk-version>
     <deployment-targets>
         <target device="mobileweb">false</target>
         <target device="iphone">true</target>
@@ -10,9 +11,9 @@
     <id>com.cascadechristmas.app</id>
     <name>CascadeXmas</name>
     <version>1.0</version>
-    <publisher>alanleard</publisher>
+    <publisher>Alan Leard</publisher>
     <url>http://www.cascadetheatre.org</url>
-    <description>not specified</description>
+    <description>A mobile application to accompany the 2011 performance of A Cascade Christmas.</description>
     <copyright>2011 by alanleard</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
@@ -29,15 +30,13 @@
         </orientations>
         <orientations device="ipad">
             <orientation>Ti.UI.PORTRAIT</orientation>
-            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <modules>
-    	 <module platform='iphone' version="1.0">ti.paint</module>
-    	 <module platform='android' version="1.0">ti.paint</module>
-    	 <module platform="iphone" version="0.1">ti.box2d</module>
+        <module platform="iphone" version="1.0">ti.paint</module>
+        <module platform="android" version="1.0">ti.paint</module>
+        <module platform="iphone" version="0.1">ti.box2d</module>
     </modules>
 </ti:app>
