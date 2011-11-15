@@ -23,7 +23,7 @@ Facebook = {
 			return Titanium.Facebook.createLoginButton(e);
 		},
 		publish: function(e){
-			Titanium.Facebook.appid = '192082434200773';
+			//Titanium.Facebook.appid = '192082434200773';
 			Titanium.Facebook.permissions = ['publish_stream'];
 			
 			function fbcall(){

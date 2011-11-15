@@ -5,17 +5,17 @@ reporting an issue to help us understand your environment, build settings
 and aid in debugging. Please attach this log to any issue that you report.
 ================================================================================
 
-Starting build at 11/04/11 19:21
+Starting build at 11/14/11 21:07
 
 Build details:
 
-   timestamp=11/02/11 17:00
-   version=1.7.5
-   githash=ab20af7
+   timestamp=10/17/11 13:44
+   version=1.7.3
+   githash=dcf4257
 
 
 Script arguments:
-   /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/iphone/builder.py
+   /Library/Application Support/Titanium/mobilesdk/osx/1.7.3/iphone/builder.py
    simulator
    4.3
    /Users/alanleard/TiApps/CascadeChristmas
@@ -25,16 +25,16 @@ Script arguments:
    iphone
    
 
-Building from: /Library/Application Support/Titanium/mobilesdk/osx/1.7.5/iphone
+Building from: /Library/Application Support/Titanium/mobilesdk/osx/1.7.3/iphone
 Platform: Darwin Kernel Version 10.8.0: Tue Jun  7 16:33:36 PDT 2011; root:xnu-1504.15.3~1/RELEASE_I386
 
 Xcode path is: /Developer
 
 [INFO] Detected third-party module: ti.paint/1.0[INFO] Detected third-party module: ti.box2d/0.1
-githash=ab20af7, existing_git_hash=ab20af7
+githash=dcf4257, existing_git_hash=dcf4257
 writing contents of /Users/alanleard/TiApps/CascadeChristmas/build/iphone/project.xcconfig:
 
-TI_VERSION=1.7.5
+TI_VERSION=1.7.3
 TI_SDK_DIR=/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
 TI_APPID=com.cascadechristmas.app
 OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd

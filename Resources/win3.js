@@ -2,12 +2,17 @@ var win = Ti.UI.currentWindow;
 
 var table = Ti.UI.createTableView({
 
-	data:[{title:'Baking Gingerbread Men', url:'games/popup.js', hide:true},
-	{title:'Decorating Cookies', url:'games/draw.js', hide:true}, 
-	{title:'Searching for Santa', url:'games/santa.js', hide:false},
-	{title:'Picture with Santa', url:'games/santaPic.js', hide:true},
-	{title:'Make it Snow', url:'games/makeSnow.js', hide:false},
-	]
+	data:[{title:'Gingerbread Party', url:'games/popup.js', hide:true, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'},
+	{title:'Decorate a Cookie', url:'games/draw.js', hide:true, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'}, 
+	{title:'Sneaky Santa', url:'games/santa.js', hide:false, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'},
+	{title:'Santa Picture', url:'games/santaPic.js', hide:true, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'},
+	{title:'Make it Snow', url:'games/makeSnow.js', hide:false, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'},
+	{title:'Christmas Countdown', url:'games/countdown.js', hide:false, leftImage:'images/gMan.png', rightImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/8, color:'#fff', selectedBackgroundColor:'red'}
+	],
+	//separatorColor:'transparent',
+	//separatorStyle:0,
+	color:'#fff',
+	backgroundColor:'#000'
 });
 
 

@@ -1,15 +1,15 @@
 Titanium.Paint = Ti.Paint = require('ti.paint');
 var close = Ti.UI.createButton({title:'Done', width:50, height:30, top:2,left:2});
 var win = Ti.UI.currentWindow;
-win.addEventListener('focus', function(){
-	win.navBarHidden=true;
-});
+
 var imageView = Ti.UI.createImageView({backgroundColor:'#fff'});
 var gManLrg = Ti.UI.createImageView({
     image: '../images/gManBlk.png',
     top:0,
-    height:Ti.Platform.displayCaps.platformHeight-20,
-    width:Ti.Platform.displayCaps.platformWidth-20,
+    //height:'auto',
+    //width:'auto',
+    height:Ti.Platform.displayCaps.platformHeight-85,
+    width:'auto',
     hiRes:true
 });
 
@@ -32,8 +32,8 @@ var controlView = Titanium.UI.createView({
 });
 
 win.add(controlView);
-win.add(close);
-
+//win.add(close);
+win.leftNavButton = close;
 close.addEventListener('click', function(){
 	var confirm = Ti.UI.createAlertDialog({title:'Are you sure?', message:'Are you sure you are done decorating your cookie?  Be sure to save before leaving.', buttonNames:['Leave', 'Cancel'], cancel:1});
 	confirm.show();
@@ -260,13 +260,14 @@ var strokeSize = Ti.UI.createTextField({
   value:10, 
   borderWidth:1, 
   borderRadius:10,
-  top:3,
-  right:3,
+  top:0,
+  left:0,
   keyboardType:Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION,
   paddingLeft:3,
   backgroundColor:'#fff'
 });
-win.add(strokeSize);
+
+win.rightNavButton = strokeSize;
 
 var show = Ti.UI.createLabel({  
   bottom:5,
@@ -390,6 +391,25 @@ bgImageBtn.addEventListener('click',function()
 */
 //Save Image to users Photo Gallery
 save.addEventListener('click',function(){
+var hideView = Ti.UI.createView({
+	top:0,
+	bottom:0,
+	left:0,
+	right:0,
+	opacity:0.8,
+	backgroundColor:'#000'
+});
+win.add(hideView);
+var actInd = Ti.UI.createActivityIndicator({
+	
+});
+
+if(Ti.Platform.osname !='android'){
+	win.add(actInd);
+	
+} 
+
+actInd.show();
  // controlView.hide();
  // strokeSize.hide();
  // close.hide();
@@ -398,16 +418,66 @@ save.addEventListener('click',function(){
  //   {
       // set blob on image view
 
-      var saveimage = imageView.toImage();
+     var  saveimage = imageView.toImage();
 
       Titanium.Media.saveToPhotoGallery(saveimage,{
         success: function(e) {
-          Titanium.UI.createAlertDialog({
+        	actInd.hide();
+			win.remove(hideView);
+          var alert1 = Titanium.UI.createAlertDialog({
             title:'Gingerbread Man Saved',
             message:'Your current gingerbread man has been saved to your Photo Gallery.'
-          }).show();    
+          })
+          alert1.show();    
+          // alert1.addEventListener('click', function(){
+          	 // var alert2 = Titanium.UI.createAlertDialog({
+		            // title:'Share your Gingerbread Man!',
+		            // message:'Do you want tp share your Gingerbread Man on Facebook?', buttonNames:['Yes', 'No']
+		          // });
+		          // alert2.show(); 
+		     // alert2.addEventListener('click', function(e){
+		     	// if(e.index ===0){
+		     		// First make sure this permission exists
+					// Titanium.Facebook.permissions = ['publish_stream'];
+					// Titanium.Facebook.authorize();
+					
+					// ...
+					// ...
+					
+					// Now post the photo after you've confirmed that authorize() succeeded
+					//var f = Ti.Filesystem.getFile('pumpkin.jpg');
+					//var blob = f.read();
+					// var data = {
+					    // caption: 'Checkout my Gingerbread Man from the Cascade Christmas App!',
+					    // picture: saveimage
+					// };
+					// Titanium.Facebook.request('photos.upload', data, function(e){
+					    // if (e.success) {
+					        // alert("You have posted your creation on Facebook!");
+					    // } else {
+					        // if (e.error) {
+					            // alert("Sorry, something didn't work, but your Gingerbread Man is still in your gallery");
+					        // } else {
+					            // alert("Sorry, something didn't work, but your Gingerbread Man is still in your gallery");
+					        // }
+					    // }
+					// });
+				     // } else {
+// 				     	
+				     // }
+				  // });
+          
+          //});
+          
+          
+          
+          
+          
+          
         },
         error: function(e) {
+        	actInd.hide();
+			win.remove(hideView);
           Titanium.UI.createAlertDialog({
             title:'Error saving',
             message:e.error

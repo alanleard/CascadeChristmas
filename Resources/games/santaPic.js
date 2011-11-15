@@ -26,22 +26,18 @@ var button = Titanium.UI.createButton({
 
 
 var overlay = Titanium.UI.createView();
-overlay.add(box);
+overlay.add(santa);
 overlay.add(button);
 
 
 button.addEventListener('click',function()
 {
-	//scanner.borderColor = 'blue';
-	Ti.Media.vibrate();
+	//Ti.Media.vibrate();
 	Ti.Media.takePicture();
 	
 });
 
-santa.addEventListener('touchmove', function(e){
-	
-	santa.center = e.globalPoint;
-});
+
 
 
 Titanium.Media.showCamera({
@@ -49,7 +45,6 @@ Titanium.Media.showCamera({
 	success:function(event)
 	{
 		alert('Great Picture, now just move the santa hat in place and save the photo.');
-
 		var view = Ti.UI.createView({top:0, left:0, right:0, bottom:0});
 		// place our picture into our window
 		var imageView = Ti.UI.createImageView({
@@ -58,11 +53,21 @@ Titanium.Media.showCamera({
 			height:win.height
 		});
 		view.add(imageView);
+		
+		//var santaZoom = Ti.UI.createScrollView({minZoomScale:1.0, maxZoomScale:3.0, height:350, width:250});
+		//santaZoom.add(santa);
+		
+		//view.add(santaZoom);
+		
+		santa.addEventListener('touchmove', function(e){
+			santa.center = e.globalPoint;
+		});
+		
 		view.add(santa);
 		win.add(view);
 		
 		// programatically hide the camera
-		Ti.Media.hideCamera();
+		//Ti.Media.hideCamera();
 		
 		var save = Ti.UI.createButton({
 			title:'Save',
@@ -86,7 +91,7 @@ Titanium.Media.showCamera({
 		var a = Titanium.UI.createAlertDialog({title:'Camera'});
 		if (error.code == Titanium.Media.NO_CAMERA)
 		{
-			a.setMessage('Please run this test on device');
+			a.setMessage('Sorry, you need a camera.');
 		}
 		else
 		{
@@ -96,8 +101,7 @@ Titanium.Media.showCamera({
 	},
 	overlay:overlay,
 	showControls:false,	// don't show system controls
-	mediaTypes:Ti.Media.MEDIA_TYPE_PHOTO
-	//autohide:true // tell the system not to auto-hide and we'll do it ourself
+	mediaTypes:Ti.Media.MEDIA_TYPE_PHOTO,
+	autohide:true // tell the system not to auto-hide and we'll do it ourself
 	});
-
-Ti.Media.switchCamera(Ti.Media.CAMERA_REAR);
+	

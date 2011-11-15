@@ -338,6 +338,8 @@ extern NSString * const TI_APPLICATION_DEPLOYTYPE;
 	
 	request = [[ASIFormDataRequest requestWithURL:url] retain];	
 	[request setDelegate:self];
+    [request setUsername:@"PCB_INTERNET_IOS"];
+    [request setPassword:@"Pl@insC@pit@l1nternet"];
     if (timeout) {
         NSTimeInterval timeoutVal = [timeout doubleValue] / 1000;
         [request setTimeOutSeconds:timeoutVal];
