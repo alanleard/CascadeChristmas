@@ -1,7 +1,31 @@
 var win = Ti.UI.currentWindow;
   var view = Ti.UI.createView();
   win.add(view);
-  	snow = function( options )
+
+snowAndroid = function(){
+	var topView = Ti.UI.createView({ backgroundColor:'transparent', top:0, bottom:0, left:0, right:0 });
+
+	topView.addEventListener("click",function(e)
+		{
+			//var color = generateRandomColor();
+			//generateNewBox()
+			var size = Math.random() * 40;
+			if(size<15){
+				size=(size*2)+10;
+			}
+			var box = Ti.UI.createView({
+				center:{x:e.x,y:e.y},
+				width:size,
+				height:size,
+				backgroundImage:'../images/snowflake.png'
+			});		
+			topView.add(box);
+		
+		});//e
+		return topView;
+  };
+  
+  snow = function( options )
 	{
 		
 		
@@ -106,6 +130,7 @@ var win = Ti.UI.currentWindow;
 	}//end factoryView
 	
 var button = Ti.UI.createButton({title:'Snap Shot'});
+if(Ti.Platform.osname !='android'){
 win.rightNavButton =button;
 var actInd = Ti.UI.createActivityIndicator({
 	
@@ -120,19 +145,22 @@ var actInd = Ti.UI.createActivityIndicator({
 	visible:false
 });
 win.add(hideView);
-	if(Ti.Platform.osname !='android'){
+
 		hideView.add(actInd);
-		
+		actInd.show();
 	} 
 	
-	actInd.show();
+	
 button.addEventListener('click', function(){
 	 var saveimage = win.toImage();
-	hideView.show();
-
+	if(Ti.Platform.osname != 'android'){
+		hideView.show();
+	}
       Titanium.Media.saveToPhotoGallery(saveimage,{
         success: function(e) {
+        	if(Ti.Platform.osname != 'android'){
         	hideView.hide();
+        	}
           var alert1 = Titanium.UI.createAlertDialog({
             title:'Snow Scene Saved',
             message:'Your current snow scene has been saved to your Photo Gallery.'
@@ -155,7 +183,10 @@ win.addEventListener('open', function(){
 			Titanium.Media.openPhotoGallery(
   { 
     success:function(event)
-    {hideView.show();
+    {
+    	if(Ti.Platform.osname != 'android'){
+    	hideView.show();
+    	}
       var image = event.media;
       if(image.width>image.height){
       	Titanium.UI.orientation = Titanium.UI.LANDSCAPE_RIGHT;
@@ -173,7 +204,9 @@ win.addEventListener('open', function(){
       bgImage.write(image);
             
       view.backgroundImage = bgImage.nativePath; 
+      if(Ti.Platform.osname != 'android'){
       hideView.hide();
+      }
     },
     cancel:function()
     {
@@ -183,8 +216,11 @@ win.addEventListener('open', function(){
     {
     }
   });
-	win.add(snow());
-
+  	if(Ti.Platform.osname != 'android'){
+		win.add(snow());
+	} else {
+		win.add(snowAndroid());
+	}
 		}
 	});
 

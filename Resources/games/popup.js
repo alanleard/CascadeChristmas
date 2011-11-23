@@ -16,7 +16,7 @@ var bgImage = Ti.UI.createView({
 });
 if(Ti.Platform.osname == 'ipad'){
 	bgImage.width = 1024;
-	bgImage.backgroundImage = '../images/christmas'+picnum+'@2x.jpg',
+	bgImage.backgroundImage = '../images/christmas'+picnum+'@2x.jpg'
 }
 win.add(bgImage);
 function addCommas(nStr)
@@ -37,7 +37,8 @@ var scoreLabel = Ti.UI.createLabel({
    text:addCommas(score),
    width:60,
     color: '#fff',
-    textAlign:'right'
+    textAlign:'right',
+    backgroundColor:'#000'
 });
 scoreView.add(scoreLabel);
 
@@ -263,5 +264,5 @@ var start = Ti.UI.createAlertDialog({title:'Gingerbread Party', message:'Tap the
 		} else{
 			win.close();
 		}
-});
+	});
 });

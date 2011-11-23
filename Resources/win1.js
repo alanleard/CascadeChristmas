@@ -161,7 +161,7 @@ if(Ti.Platform.osname == 'ipad'){
 
 var creditTitle = Ti.UI.createLabel({
 	text:'Credits',
-	top:10, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
+	top:10, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}, color:'#000'});
 	
 var credits = Ti.UI.createLabel({
 	//backgroundImage:'images/special.png',
@@ -171,8 +171,10 @@ var credits = Ti.UI.createLabel({
 	font:{fontSize:14},
 	textAlign:'center',
 	minFontSize:8,
+	color:'#000',
 	text:'~Artistic Director & Producer~\nJana Pulcini-Leard\n\n~Costume Designer~\nMolly Barber\n\n~Dance Captain~\nMichelle Marks\n\n~Choreographers~\nKristi Webber, Michelle Marks & Rhapsody Violetti\n\n~Vocal Director~\nTrish Harris\n\n~Costume Assistants~\nRobyn Tyler, Obioma Officer, Carolyn Placide, Tina Marty, Marti Leard\n\n~Costume Contributors~\nHumor Shop, Shasta College & Shasta High School\n\n~Production Assistant~\nLyn Regan\n\n~Lighting Design & Operator~\nBrandon Stewart\n\n~Technical Director~\nTodd Tracy\n\n~Stage Manager~\nDean Williams\n\n~Assistant Stage Managers~\nDaniel Darling & David Baker\n\n~Audio Technician~\nTodd Tracy\n\n~Box Office Supervisor~\nHaley Bagnaschi\n\n~House Manager~\nLyn Rosten\n\n~Print Design~\nInHouse Marketing\n\n~Program Sales~\nJulie DePrada & Your Girls Friday Marketing Solutions\n\n~Custom Backdrop Artist~\nDavid Fraser\n\n~Make-Up Designers & Hairstylists~\nCollette, Scott & Sydney Stanger\n\n~Set Design & Construction~\nBest Choice Home Improvement, David Fraser, Matt Goodman & Jerry Rice\n\n~Poster Distribution Coordinator~\nKim Acuna\n\n~Craft Services Manager~\nJennifer Marty\n\n~Youth & Student Manager~\nTina Arons\n\n~Props & Furniture~\nWestside Performing Arts Company, Alan Leard\n\n~Prop Coordinators~\nJana Pulcini-Leard, Kristi Webber, Richard Pulcini & Victoria Graham\n\n~Soundtrack Composer~\nTravis Micheal\n\n~Pre Show Cooridnator~\nJulie DePrada & Your Girl Friday Marketing Solutions\n\n~Production Photographer~\nMichael Burke\n\n~Program & Graphic Design~\nInHouse Marketing\n\n~Audition Team~\nJana Pulcini-Leard, Alan Leard, Michelle Marks, Kristi Webber, Trish Harris, Tina Marty, Peggy Baker, Tina Arons, Lyn Regan, Julie DePrada \n\n~Accompanist~\nJonathon Narducci\n\n~Set Construction Space provided by~\nRiverfront Playhouse, Downtown\n\n~Rehearsal Space provided by~\nCascade Theatre, Celebration Studios, Front & Center Dance Studio & Westside Performing Arts Company\n\n~Storage Space provided by~\nWard Gandy\n\n~Nativity Script Writers~\nCal Hunter & Jana Pulcini-Leard\n\n~Violinist~\nKendra Wieck'
 });
+
 
 
 var creditScroll = Ti.UI.createScrollView({
@@ -195,6 +197,7 @@ if(Ti.Platform.osname == 'ipad'){
 
 var thankTitle = Ti.UI.createLabel({
 	text:'Special Thanks to:',
+	color:'#000',
 	top:10, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
 
 var thanks = Ti.UI.createLabel({
@@ -205,6 +208,7 @@ var thanks = Ti.UI.createLabel({
 	font:{fontSize:14},
 	textAlign:'center',
 	minFontSize:8,
+	color:'#000',
 	text:'Gary Desmond & Armando Mejorado\n\nPaige Allen & The Humor Shop\n\nJason & Peggy Baker with Celebration Studio\n\nRecord Searchlight\n\nAfter 5 Magazine\n\nEnjoy Magazine & InHouse Marketing\n\nBest Choice Home Improvement\n\nViva Downtown\n\nLisa Collins\n\nLinda Bott KCNR\n\nRobert Soffian & Shasta College\n\nWestside Performing Arts Company\n\nSoleus\n\nDan Kupsky & Riverfront Playhouse\n\nFront & Center Dance Studio\n\nAce Valley Hardware\n\nDebbie Johnson\n\nValerie Ing-Miller & Jefferson Public Radio\n\nMichael Burke Photography\n\nShasta Regional Medical Center\n\nLowe’s\n\nWard Gandy\n\nNaomi Yamamoto & Results Radio\n\nRandie Meyer & Redding Radio\n\nMariah & Jose at Mix 101\n\nDoni Chamberlain-Greenberg & ANewsCafe.com\n\nLorraine McGraw & Channel 7'
 });
 if(Ti.Platform.osname == 'ipad'){
@@ -214,6 +218,12 @@ if(Ti.Platform.osname == 'ipad'){
 	//thanks.height = 1202;
 }
 
+if(Ti.Platform.osname == 'android'){
+	credits.top= 125;
+creditTitle.top = 85;
+thanks.top = 85;
+thanks.top = 125;}
+
 var thanksScroll = Ti.UI.createScrollView({
 	top:85,
 	contentHeight:'auto',
@@ -222,7 +232,8 @@ var thanksScroll = Ti.UI.createScrollView({
 	left:0,
 	right:0,
 	minZoomScale:1.0,
-	maxZoomScale:3.0
+	maxZoomScale:3.0,
+	
 });
 thanksScroll.add(thankTitle);
 thanksScroll.add(thanks);
@@ -251,10 +262,17 @@ var staffLabel = Ti.UI.createLabel({text:'Staff Bios', top:10, textAlign:'center
 
 bioView.add(staffLabel);
 
+if(Ti.Platform.osname == 'android'){
+	credits.top= 125;
+creditTitle.top = 85;
+thankTitle.top = 85;
+thanks.top = 125;
+bioView.top = 85;}
+
 for (var i = 0; i<5; i++){
 	
-	var nameLabel = Ti.UI.createLabel({text:bios[i].name, top:20,bottom:5, left:10, right:10, height:'auto', font:{fontSize:16, fontWeight:'bold'}});
-	var bioLabel = Ti.UI.createLabel({text: bios[i].text, top:5, bottom:10, left:10, right:10, height:'auto', font:{fontSize:14}});
+	var nameLabel = Ti.UI.createLabel({text:bios[i].name, top:20,bottom:5, left:10, right:10, height:'auto', color:'#000', font:{fontSize:16, fontWeight:'bold'}});
+	var bioLabel = Ti.UI.createLabel({text: bios[i].text, top:5, bottom:10, left:10, right:10, height:'auto', color:'#000', font:{fontSize:14}});
 	bioView.add(nameLabel);
 	bioView.add(bioLabel);
 }

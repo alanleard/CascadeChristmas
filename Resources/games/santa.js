@@ -12,7 +12,9 @@ win.addEventListener('focus', function(){
 	var next = Ti.UI.createButton({
 		title:'Next',
 	});
-	win.setRightNavButton(next);
+	if(Ti.Platform.osname != 'android'){
+		win.setRightNavButton(next);
+	}
 	
 	var santa = Ti.UI.createImageView({
 		image:'../images/santa.png',
@@ -80,7 +82,7 @@ win.addEventListener('focus', function(){
 		clearInterval(timer);
 		//santa.animate({height:80, width:80, duration:200});
 		setTimeout(function(){
-			santa2.visible = false;
+			santa2.hide();
 			var alertD = Ti.UI.createAlertDialog({title:'You Found Him!', message:'You found Santa in '+time+' seconds!', buttonNames:['Done', 'Next']});
 			if(time<2){
 				if(time<1){

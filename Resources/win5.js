@@ -5,6 +5,7 @@ Titanium.Facebook.permissions = ['publish_stream', 'read_stream', "user_checkins
 
 Titanium.Facebook.addEventListener('login', function(e) {
     if (e.success) {
+        postView.hide();
         alert('You have logged in to Facebook.');
     }
 });
@@ -52,6 +53,8 @@ var message = Ti.UI.createTextField({
 	top:10,
 	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 });
+
+
 win.add(message);
 var cascadeData = {
 		    link: "http://www.cascadetheatre.org",
@@ -64,8 +67,9 @@ var cascadeData = {
 var cascadeShare = Ti.UI.createButton({
 		title:'Post on the Cascade Theatre wall',
 		feed:'194564246214/feed',
-		height:40,
-		width:300,
+		height:50,
+		left:10,
+		right:10,
 		top:60
 });
 
@@ -83,14 +87,15 @@ checkinData = {
 var cascadeCheckin = Ti.UI.createButton({
 		title:'Check-in at the Cascade Theatre',
 		feed:'me/checkins',
-		height:40,
-		width:300,
+		height:50,
+		left:10,
+		right:10,
 		top:110
 });
 
 win.add(cascadeCheckin);
 
-meData = {
+var meData = {
 		    link: "http://www.cascadetheatre.org",
 		    name: "A Cascade Christmas at the Cascade Theatre",
 		    //message: message.value,
@@ -102,10 +107,18 @@ meData = {
 var meShare = Ti.UI.createButton({
 		title:'Make a post on your wall',
 		feed:'me/feed',
-		height:40,
-		width:300,
+		height:50,
+		left:10,
+		right:10,
 		top:160
 });
+
+if(Ti.Platform.osname == 'android'){
+	message.height = 60;
+	cascadeCheckin.top = 140;
+	cascadeShare.top = 80;
+	meShare.top = 200;
+}
 
 win.add(meShare);
 
@@ -118,7 +131,7 @@ var postView = Ti.UI.createView({
 	opacity:0.8,
 	visible:false
 });
-
+if(Ti.Platform.osname != 'android'){
 var actInd = Ti.UI.createActivityIndicator({
 	color:'#fff',
 	message:'Posting...',
@@ -128,6 +141,7 @@ var actInd = Ti.UI.createActivityIndicator({
 
 postView.add(actInd);
 actInd.show();
+}
 win.add(postView);
 
 meShare.addEventListener('click', function(e){
@@ -221,6 +235,9 @@ var buttonView = Ti.UI.createView({
 win.add(buttonView);
 
 var space = (Ti.Platform.displayCaps.platformWidth-200)/6
+if(Ti.Platform.osname =='android'){
+	space = (Ti.Platform.displayCaps.platformWidth-200)/4
+}
 var facebook = Ti.UI.createImageView({
 	image:'images/fb.png',
 	height:40,
@@ -254,7 +271,10 @@ var app = Ti.UI.createButton({
 app.addEventListener('click', function(){
 	Ti.Platform.openURL('http://itunes.apple.com/us/app/cascade-theatre-redding-ca/id388337024?mt=8');
 });
+
+if(Ti.Platform.osname !='android'){
 buttonView.add(app);
+}
 var call = Ti.UI.createButton({
 	image:'images/call.png',
 	height:40,

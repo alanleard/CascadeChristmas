@@ -63,9 +63,10 @@ var scrollView1 = Ti.UI.createScrollView({
 	bottom:0,
 	left:0,
 	right:0,
-	//height:Ti.Platform.displayCaps.platformHeight,
+	height:Ti.Platform.displayCaps.platformHeight,
 	width:Ti.Platform.displayCaps.platformWidth
 });
+
 var view1title = Ti.UI.createLabel({
 	text:'Adult Cast',
 	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
@@ -74,17 +75,17 @@ scrollView1.add(view1title);
 var view1 = Ti.UI.createView({
 	top:40,
 	layout:'horizontal',
-	height:'auto',
+	height:700,
 	width:Ti.Platform.displayCaps.platformWidth
 });
+scrollView1.add(view1);
+var clength = castInfo.length;
 
-if(Ti.Platform.osname == 'android'){
-	view1.height = 1200;
-}
+for(var i=0; i<clength; i++){
 
-var length = castInfo.length;
-for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
+	
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
+	
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -94,13 +95,17 @@ for(var i=0; i<length; i++){
 		borderColor:'#000' 
 		//hiRes:true
 	});
+	if(Ti.Platform.osname == 'android'){
+		// container.left = (Ti.Platform.displayCaps.platformWidth-360)/5;
+		pic.borderColor='#fff';
+	}
 	container.add(pic);
 	var name = Ti.UI.createLabel({
 		text:container.name,
 		color:'#000',
 		font:{fontSize:10},
 		top:3,
-		height:10,
+		height:15,
 		width:90,
 		textAlign:'center',
 		touchEnabled:false,
@@ -125,8 +130,8 @@ for(var i=0; i<length; i++){
 
 }
 
-scrollView1.add(view1);
-scrollable.views = [scrollView1];
+
+//scrollable.views = [scrollView1];
 	view1.addEventListener('touchend', function(e){
 		if(e.source.name){
 			e.source.opacity = 0.5;
@@ -195,17 +200,15 @@ scrollView2.add(view2title);
 var view2 = Ti.UI.createView({
 	top:40,
 	layout:'horizontal',
-	height:'auto',
-	width:Ti.Platform.displayCaps.platformWidth
+	height:500,
+	width:Ti.Platform.displayCaps.platformWidth,
+	//backgroundColor:'red'
 });
 
-if(Ti.Platform.osname == 'android'){
-	view2.height = 1200;
-}
 
-var length = students.length;
-for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:students[i].image, name:students[i].name, role:students[i].role});
+var slength = students.length;
+for(var i=0; i<slength; i++){
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10,  headshot:students[i].image, name:students[i].name, role:students[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -215,13 +218,17 @@ for(var i=0; i<length; i++){
 		borderColor:'#000' 
 		//hiRes:true
 	});
+	if(Ti.Platform.osname == 'android'){
+		// container.left = (Ti.Platform.displayCaps.platformWidth-360)/5;
+		pic.borderColor='#fff';
+	}
 	container.add(pic);
 	var name = Ti.UI.createLabel({
 		text:container.name,
 		color:'#000',
 		font:{fontSize:10},
 		top:4,
-		height:10,
+		height:15,
 		width:90,
 		textAlign:'center',
 		touchEnabled:false,
@@ -247,7 +254,7 @@ for(var i=0; i<length; i++){
 }
 
 scrollView2.add(view2);
-scrollable.views = [scrollView1, scrollView2];
+//scrollable.views = [scrollView1, scrollView2];
 	view2.addEventListener('touchend', function(e){
 		if(e.source.name){
 			e.source.opacity = 0.5;
@@ -317,13 +324,10 @@ var view3 = Ti.UI.createView({
 	width:Ti.Platform.displayCaps.platformWidth
 });
 
-if(Ti.Platform.osname == 'android'){
-	view3.height = 1200;
-}
 
-var length = youth.length;
-for(var i=0; i<length; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:5, bottom:5, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
+var ylength = youth.length;
+for(var i=0; i<ylength; i++){
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -333,13 +337,17 @@ for(var i=0; i<length; i++){
 		borderColor:'#000' 
 		//hiRes:true
 	});
+	if(Ti.Platform.osname == 'android'){
+		// container.left = (Ti.Platform.displayCaps.platformWidth-360)/5;
+		pic.borderColor='#fff';
+	}
 	container.add(pic);
 	var name = Ti.UI.createLabel({
 		text:container.name,
 		color:'#000',
 		font:{fontSize:10},
 		top:4,
-		height:10,
+		height:15,
 		width:90,
 		textAlign:'center',
 		touchEnabled:false,
@@ -409,17 +417,17 @@ scrollable.views = [scrollView1, scrollView2, scrollView3];
 		Titanium.UI.currentTab.open(flipWin,{animated:true, transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
 		}
 	});
-var hideView = Ti.UI.createView({top:0, left:0, right:0, bottom:0, opacity:0.8, zIndex:100, backgroundColor:'#000'});
-var actInd = Ti.UI.createActivityIndicator({
-	color:'#fff',
-	//message:'Grabbing the Cast...',
-	height:'auto',
-	style: Titanium.UI.iPhone.ActivityIndicatorStyle.BIG
-});
-hideView.add(actInd);
-actInd.show();
-win.add(hideView);
-setTimeout(function(){
-hideView.hide();
-},1000);
+// var hideView = Ti.UI.createView({top:0, left:0, right:0, bottom:0, opacity:0.8, zIndex:100, backgroundColor:'#000'});
+// var actInd = Ti.UI.createActivityIndicator({
+	// color:'#fff',
+	// //message:'Grabbing the Cast...',
+	// height:'auto',
+	// style: Titanium.UI.iPhone.ActivityIndicatorStyle.BIG
+// });
+// hideView.add(actInd);
+// actInd.show();
+// win.add(hideView);
+// setTimeout(function(){
+// hideView.hide();
+// },1000);
 

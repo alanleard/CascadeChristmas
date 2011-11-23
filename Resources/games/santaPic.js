@@ -45,6 +45,14 @@ Titanium.Media.showCamera({
 	success:function(event)
 	{
 		alert('Great Picture, now just move the santa hat in place and save the photo.');
+		
+		var santa2 = Titanium.UI.createImageView({
+			image:'../images/santahat.png',
+			height:350,
+			width:250,
+			center:{x:Ti.Platform.displayCaps.platformWidth/2, y:195}
+		});
+
 		var view = Ti.UI.createView({top:0, left:0, right:0, bottom:0});
 		// place our picture into our window
 		var imageView = Ti.UI.createImageView({
@@ -59,11 +67,13 @@ Titanium.Media.showCamera({
 		
 		//view.add(santaZoom);
 		
-		santa.addEventListener('touchmove', function(e){
-			santa.center = e.globalPoint;
+		santa2.addEventListener('touchmove', function(e){
+			
+				santa2.center = e.globalPoint;
+			
 		});
 		
-		view.add(santa);
+		view.add(santa2);
 		win.add(view);
 		
 		// programatically hide the camera
@@ -76,7 +86,9 @@ Titanium.Media.showCamera({
 			width:60,
 			height:40
 		});
-		win.rightNavButton = save;
+		if(Ti.Platform.osname != 'android'){
+			win.rightNavButton = save;
+		}
 		save.addEventListener('click', function(){
 			Titanium.Media.saveToPhotoGallery(view.toImage());
 			alert('Image saved to Gallery');
