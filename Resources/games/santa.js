@@ -30,9 +30,10 @@ win.addEventListener('focus', function(){
 		width:80,
 		visible:false
 	});
-	if(Ti.Platform.osname == 'ipad'){
+	if(Ti.Platform.osname != 'iphone'){
 		santa2.image = '../images/santa@2x.png'
 	}
+	
 
 	var touchView = Ti.UI.createView({
 		width:80,

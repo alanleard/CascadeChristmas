@@ -258,7 +258,7 @@ var bios = [
 var bioScroll = Ti.UI.createScrollView({top:85, bottom:0, left:0, right:0,contentHeight:'auto',
 	contentWidth:'auto', });
 var bioView = Ti.UI.createView({layout:'vertical', height:'auto'});
-var staffLabel = Ti.UI.createLabel({text:'Staff Bios', top:10, textAlign:'center', 	height:'auto', font:{fontSize:24, fontWeight:'bold'}});
+var staffLabel = Ti.UI.createLabel({text:'Staff Bios', top:10, textAlign:'center', color:'#000', height:'auto', font:{fontSize:24, fontWeight:'bold'}});
 
 bioView.add(staffLabel);
 

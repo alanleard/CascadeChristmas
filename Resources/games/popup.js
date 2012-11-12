@@ -37,7 +37,7 @@ var scoreLabel = Ti.UI.createLabel({
    text:addCommas(score),
    width:60,
     color: '#fff',
-    textAlign:'right',
+    textAlign:'center',
     backgroundColor:'#000'
 });
 scoreView.add(scoreLabel);

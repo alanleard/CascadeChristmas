@@ -69,7 +69,7 @@ var scrollView1 = Ti.UI.createScrollView({
 
 var view1title = Ti.UI.createLabel({
 	text:'Adult Cast',
-	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
+	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold', color:'#000'}});
 
 scrollView1.add(view1title);
 var view1 = Ti.UI.createView({
@@ -84,7 +84,7 @@ var clength = castInfo.length;
 for(var i=0; i<clength; i++){
 
 	
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:110, left:10, top:10, headshot:castInfo[i].image, name:castInfo[i].name, role:castInfo[i].role});
 	
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
@@ -104,12 +104,12 @@ for(var i=0; i<clength; i++){
 		text:container.name,
 		color:'#000',
 		font:{fontSize:10},
-		top:3,
+		top:4,
 		height:15,
 		width:90,
 		textAlign:'center',
 		touchEnabled:false,
-		minimumFontSize:8
+		minimumFontSize:6
 	});
 	container.add(name);
 	if(Ti.Platform.osname == 'ipad'){
@@ -193,7 +193,7 @@ var scrollView2 = Ti.UI.createScrollView({
 
 var view2title = Ti.UI.createLabel({
 	text:'Student Cast',
-	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
+	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold', color:'#000'}});
 
 
 scrollView2.add(view2title);
@@ -208,7 +208,7 @@ var view2 = Ti.UI.createView({
 
 var slength = students.length;
 for(var i=0; i<slength; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10,  headshot:students[i].image, name:students[i].name, role:students[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:110, left:10, top:10,  headshot:students[i].image, name:students[i].name, role:students[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,
@@ -314,20 +314,20 @@ var scrollView3 = Ti.UI.createScrollView({
 
 var view3title = Ti.UI.createLabel({
 	text:'Youth Cast',
-	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold'}});
+	top:5, textAlign:'center',height:'auto', font:{fontSize:24, fontWeight:'bold', color:'#000'}});
 
 scrollView3.add(view3title);
 var view3 = Ti.UI.createView({
 	top:40,
 	layout:'horizontal',
-	height:'auto',
+	height:600,
 	width:Ti.Platform.displayCaps.platformWidth
 });
 
 
 var ylength = youth.length;
 for(var i=0; i<ylength; i++){
-	var container = Ti.UI.createView({layout:'vertical', width:90, height:104, left:10, top:10, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
+	var container = Ti.UI.createView({layout:'vertical', width:90, height:110, left:10, top:10, headshot:youth[i].image, name:youth[i].name, role:youth[i].role});
 	var pic = Ti.UI.createImageView({
 		image:'images/headshots/thumbnails/'+container.headshot+'.jpg',
 		height:90,

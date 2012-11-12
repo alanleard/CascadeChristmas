@@ -1,0 +1,34 @@
+dependencies: \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiDatabaseResultSetProxy.m \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/DatabaseModule.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiModule.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiUtils.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiColor.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiProxy.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiBase.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiThreading.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiPublicAPI.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiEvaluator.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/KrollContext.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/headers/TiCore/TiCore.h \
+  headers/TiCore/Ti.h headers/TiCore/TiBase.h \
+  headers/TiCore/TiContextRef.h headers/TiCore/TiObjectRef.h \
+  headers/TiCore/TiValueRef.h headers/TiCore/WebKitAvailability.h \
+  headers/TiCore/TiStringRef.h headers/TiCore/TiStringRefCF.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/headers/TiCore/TiContextRefPrivate.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/KrollCallback.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/KrollObject.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiDimension.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/WebFont.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiFile.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiBuffer.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiBlob.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiDatabaseResultSetProxy.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PlausibleDatabase.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLResultSet.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLPreparedStatement.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLDatabase.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLSqliteDatabase.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLSqlitePreparedStatement.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/PlausibleDatabase/PLSqliteResultSet.h \
+  /Users/alanleard/TiApps/CascadeChristmas/build/iphone/Classes/TiDatabaseProxy.h

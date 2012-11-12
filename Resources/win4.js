@@ -31,7 +31,10 @@ for(var i = 0; i<10; i++){
 		urlTop:info[i].urlTop,
 		urlBottom:info[i].urlBottom,
 		nameTop:info[i].nameTop,
-		nameBottom:info[i].nameBottom
+		nameBottom:info[i].nameBottom,
+		canScale:true,
+		width:Ti.Platform.displayCaps.platformWidth,
+		height:'auto'
 	});
 
 	
@@ -67,4 +70,35 @@ scrollable.addEventListener('doubletap', function(e){
     });
     win2.add(webview);
     Ti.UI.currentTab.open(win2,{animated:true});
-})
+});
+
+if(Ti.Platform.osname =='android'){
+	scrollable.addEventListener('click', function(e){
+
+      var srcUrl;  
+      var srcName;   
+	if(e.y<e.source.height/2){
+		srcUrl = e.source.urlTop;
+		srcName = e.source.nameTop;
+	} else{
+		srcUrl = e.source.urlBottom;
+		srcName = e.source.nameBottom;
+	}
+	
+	 var win2 = Ti.UI.createWindow({navBarHidden:false, barColor:'#000', title: srcName, backButtonTitle:'Back'});
+	 
+	 win2.orientationModes=[Titanium.UI.PORTRAIT,Titanium.UI.LANDSCAPE_RIGHT]; 
+
+    var webview = Ti.UI.createWebView({url:srcUrl});
+    var safari = Ti.UI.createButton({title:'Web'});
+    //var back = Ti.UI.createButton({title:'Back'})
+    win2.rightNavButton = safari;
+
+    safari.addEventListener ('click', function(){
+        Ti.Platform.openURL(srcUrl);
+    });
+    win2.add(webview);
+    win2.open();
+});
+}
+

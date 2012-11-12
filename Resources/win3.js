@@ -17,7 +17,6 @@ var table = Ti.UI.createTableView({
 if(Ti.Platform.osname == 'android'){
 	table.data = [{title:'Gingerbread Party', url:'games/popup.js', hide:true, leftImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/7.5, color:'#fff', selectedBackgroundColor:'red'},
 	{title:'Sneaky Santa', url:'games/santa.js', hide:false, leftImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/7.5, color:'#fff', selectedBackgroundColor:'red'},
-	{title:'Santa Picture', url:'games/santaPic.js', hide:true, leftImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/7.5, color:'#fff', selectedBackgroundColor:'red'},
 	{title:'Make it Snow', url:'games/makeSnow.js', hide:false, leftImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/7.5, color:'#fff', selectedBackgroundColor:'red'},
 	{title:'Christmas Countdown', url:'games/countdown.js', hide:false, leftImage:'images/gMan.png', height:Ti.Platform.displayCaps.platformHeight/7.5, color:'#fff', selectedBackgroundColor:'red'}
 	]
